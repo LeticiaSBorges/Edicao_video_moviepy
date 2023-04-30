@@ -2,7 +2,7 @@
 # Edição vídeo com moviepy
 Este projeto consiste editar vídeo com python, utilizando moviepy.
 
-Neste projeto foi realizado corte de vídeos, união de vídeos, colocar um video sobre o outro, acrescimo de legenda, retirada de áudio, e inclusão de áudio.
+Neste projeto foi realizado corte de vídeos, união de vídeos, colocar um video sobre o outro, acrescimo de legenda, retirada de áudio, inclusão de áudio e inclusão de imagem.
 
 Corte de vídeos
 ---
@@ -145,4 +145,5 @@ Inclusão de áudio
 Colocar um video sobre o outro
 ---
 
-
+Inclusão de imagem
+---

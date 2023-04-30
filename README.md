@@ -2,7 +2,13 @@
 # Edição vídeo com moviepy
 Este projeto consiste editar vídeo com python, utilizando moviepy.
 
-Neste projeto foi realizado corte de vídeos, acrescimo de legenda, retirada de áudio, e inclusão de áudio.
+Neste projeto foi realizado corte de vídeos, união de vídeos, colocar um video sobre o outro, acrescimo de legenda, retirada de áudio, e inclusão de áudio.
+
+Corte de vídeos
+---
+
+União de vídeos
+---
 
 Inclusão de Legenda
 ---
@@ -129,8 +135,14 @@ _video_final.write_videofile("nome_do_video_acelerado.mp4")_
 Deve ser definido as partes do vídeo que você deseja acelerar em velocidades diferentes, usando o método subclip(). Neste exemplo, a primeira parte do vídeo é mantida na velocidade normal, a segunda parte é acelerada em 2x e a terceira parte é desacelerada em 0.5x. As partes do vídeo deve ser juntadas usando o método concatenate_videoclips(). E por fim deve ser salvo pelo metodo write_videofile().
 
 
- 
 
+Retirada de áudio
+---
 
+Inclusão de áudio
+---
+
+Colocar um video sobre o outro
+---
 
 

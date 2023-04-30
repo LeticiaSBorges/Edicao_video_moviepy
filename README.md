@@ -70,5 +70,67 @@ _video_com_legendas = CompositeVideoClip([video, legenda_posicionada_1, legenda_
 
 ---
 
+Acelerar vídeo
+---
+Etapas:
+
+1.  Importe o módulo necessário;
+
+2. Crie um objeto VideoFileClip com o arquivo de vídeo;
+
+3. Use o método speedx para acelerar o vídeo. O parâmetro x define o fator de aceleração. Por exemplo, se x=2, o vídeo será reproduzido duas vezes mais rápido. Se x=0.5, o vídeo será reproduzido duas vezes mais devagar;
+
+4. Salve o novo vídeo acelerado;
+
+---
+_from moviepy.editor import *_
+
+_video = VideoFileClip("nome_do_video.mp4")_
+
+_video_acelerado = video.speedx(2)_
+
+_video_acelerado.write_videofile("nome_do_video_acelerado.mp4")_
+
+
+---
+A aceleração afeta tanto o áudio quanto o vídeo do arquivo. Se você deseja acelerar apenas o vídeo e manter o áudio original, você pode usar o método without_audio() para remover o áudio do clip antes de aplicar o speedx(). Depois, você pode adicionar novamente o áudio original ao vídeo acelerado usando o método audio.fx(). Em seguida, você pode salvar o novo vídeo com áudio usando o método write_videofile(), como mostrado anteriormente.
+
+---
+
+_video_sem_audio = video.without_audio()_
+
+_video_acelerado = video_sem_audio.speedx(2)_
+
+_audio_original = video.audio_
+
+_video_acelerado_com_audio = video_acelerado.set_audio(audio_original)_
+
+---
+ Para acelerar em direntes parte do videos dever temos:
+ 
+ ---
+ 
+ _video = VideoFileClip("nome_do_video.mp4")_
+ 
+ _parte1 = video.subclip(0, 5) # os primeiros 5 segundos do vídeo_
+ 
+_parte2 = video.subclip(5, 10).speedx(2) # a partir do segundo 5 até o segundo 10, acelerado em 2x_
+
+_parte3 = video.subclip(10, 15).speedx(0.5) # a partir do segundo 10 até o segundo 15, desacelerado em 0.5x_
+
+_parte4 = video.subclip(15, None) # a partir do segundo 15 até o final do vídeo_
+
+_video_final = concatenate_videoclips([parte1, parte2, parte3, parte4])_
+
+_video_final.write_videofile("nome_do_video_acelerado.mp4")_
+
+---
+
+Deve ser definido as partes do vídeo que você deseja acelerar em velocidades diferentes, usando o método subclip(). Neste exemplo, a primeira parte do vídeo é mantida na velocidade normal, a segunda parte é acelerada em 2x e a terceira parte é desacelerada em 0.5x. As partes do vídeo deve ser juntadas usando o método concatenate_videoclips(). E por fim deve ser salvo pelo metodo write_videofile().
+
+
+ 
+
+
 
 
